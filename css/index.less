@@ -1,0 +1,119 @@
+@col-white: #FFF;
+@col-blue:#38F;
+html,boby{
+  height: 100%;
+  overflow: hidden;//=>保证当前页面只有一屏
+  background: url("../images/baidu/timg.jpg") no-repeat center center;
+  background-size: cover;
+
+}
+/*导航区域*/
+.navBox{
+  height: 32px;
+  background: rgba(0,0,0,0.5);
+}
+.navList{
+  float: right;/*整个*/
+  font-size: 0;
+  li{
+    display: inline-block;
+    font-size: 14px;
+     a{
+      display: block;/*变为块状标签，这样就可以设置宽高*/
+       padding:0 10px;/*不设置宽度，设置左右padding，目的是为了让每一个Li或者A宽度根据内容*/
+       height: 32px;
+       line-height: 32px;
+       color:@col-white;
+       text-decoration: underline;
+    }
+  }
+}
+.searchBox{
+  box-sizing: border-box;
+  margin: 25px auto 40px auto;
+  width: 624px;
+  .logo{
+    display: block;
+    margin: 0 auto;
+    width:244px;
+
+  }
+  .content{
+    margin-top: 10px;
+    font-size: 0;
+    .searchInp,.searchBtn{
+      display: inline-block;
+      box-sizing: border-box;
+      height: 40px;
+      line-height: 40px;
+    }
+    .searchInp{
+      border: 1px solid #EEE;
+      padding: 0 5px;
+      width: 520px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.8);
+
+    }
+    .searchBtn{
+      width: 104px;
+      font-size: 16px;
+      color: @col-white;
+      text-align: center;
+      background: @col-blue;
+      &:hover{
+        background: darken(@col-blue,20%);
+      }
+    }
+  }
+}
+/*图片区域*/
+.imageBox{
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 10px 10px 0;
+  width: 810px;
+  height: 300px;
+  background: rgba(255,255,255,0.6);
+  .imageList{
+    li{
+      float: left;
+      margin: 10px 0 0 10px;
+      width: 150px;
+      height: 135px;
+      a{
+        display: block;
+        position: relative;
+        height: 100%;
+        overflow: hidden;
+
+         img{
+           display: block;
+           width: 100%;
+           height: 100%;
+           transition: ease 0.5s;
+         }
+        span{
+          display: block;
+          position: absolute;
+          left:0 ;
+          bottom: 0;
+          z-index: 9999;
+          width: 100%;
+          height: 34px;
+          line-height: 34px;
+          font-size: 14px;
+          color: @col-white;
+          text-indent: 15px;
+          background: rgba(0,0,0,0.5);
+
+        }
+        &:hover{
+          img{
+            transform: scale(1.2)  rotate(180deg);/*CSS 3中新增加的变形效果：TRANSFORM   scale:设置缩放*/
+          }
+        }
+      }
+    }
+  }
+}
